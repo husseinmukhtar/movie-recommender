@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nexus-movies",
+      "runtimeExecutable": "C:\\Users\\User\\Downloads\\movie-recommender\\movie-recommender\\venv\\Scripts\\uvicorn.exe",
+      "runtimeArgs": ["api.main:app", "--host", "0.0.0.0", "--port", "8000"],
+      "port": 8000,
+      "cwd": "C:\\Users\\User\\Downloads\\movie-recommender\\movie-recommender"
+    }
+  ]
+}

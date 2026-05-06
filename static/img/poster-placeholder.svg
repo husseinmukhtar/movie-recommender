@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 450" role="img" aria-labelledby="title desc">
+  <title id="title">Movie poster placeholder</title>
+  <desc id="desc">A generic movie poster used when a recommendation has no poster image.</desc>
+  <defs>
+    <linearGradient id="poster-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#17202a"/>
+      <stop offset="0.52" stop-color="#1f2833"/>
+      <stop offset="1" stop-color="#45a29e"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="450" fill="url(#poster-bg)"/>
+  <rect x="22" y="22" width="256" height="406" rx="14" fill="#0b0c10" fill-opacity="0.34" stroke="#c5c6c7" stroke-opacity="0.24"/>
+  <circle cx="150" cy="154" r="50" fill="none" stroke="#66fcf1" stroke-width="10"/>
+  <polygon points="140,128 140,180 181,154" fill="#66fcf1"/>
+  <rect x="66" y="260" width="168" height="14" rx="7" fill="#ffffff" fill-opacity="0.82"/>
+  <rect x="88" y="292" width="124" height="10" rx="5" fill="#c5c6c7" fill-opacity="0.62"/>
+  <text x="150" y="354" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="700">NEXUS.AI</text>
+</svg>

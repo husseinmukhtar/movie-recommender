@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Movies | AI Recommender</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animations -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Auth View -->
+    <main id="auth-view" class="view active">
+        <div class="glass-panel auth-panel">
+            <h1 class="brand">NEXUS<span>.AI</span></h1>
+            <p class="subtitle">Personalized intelligent movie curation</p>
+            
+            <form id="auth-form">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder=" " required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder=" " required>
+                    <label for="password">Password</label>
+                </div>
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <button type="submit" id="login-btn" class="btn btn-primary" style="margin-bottom: 0;">Sign In</button>
+                    <button type="button" id="register-btn" class="btn btn-outline" style="margin-bottom: 0;">Register</button>
+                </div>
+            </form>
+            <div id="auth-error" class="error-msg"></div>
+        </div>
+    </main>
+
+    <!-- Dashboard View -->
+    <main id="dashboard-view" class="view">
+        <header class="glass-header">
+            <div class="brand">NEXUS<span>.AI</span></div>
+            <div class="user-controls">
+                <span id="welcome-msg">Welcome, User</span>
+                <button id="logout-btn" class="btn btn-outline">Logout</button>
+            </div>
+        </header>
+
+        <section class="content">
+            <section class="hero-panel">
+                <div class="hero-copy">
+                    <p class="eyebrow">Personalized tonight</p>
+                    <h1>Find the next film worth your evening.</h1>
+                    <p>Hybrid recommendations blend your ratings, watch history, and similar audiences into a focused movie shelf.</p>
+                    <div class="hero-actions">
+                        <a href="#movies-container" class="hero-btn">Browse picks</a>
+                        <span class="hero-stat">Live ML engine</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-header">
+                <div>
+                    <p class="eyebrow">Recommendation shelf</p>
+                    <h2>Top Picks For You</h2>
+                </div>
+                <div class="strategy-badge">Hybrid Neural Engine</div>
+            </div>
+            
+            <!-- Skeleton Loader -->
+            <div id="loader" class="movies-grid">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+
+            <!-- Movies Grid -->
+            <div id="movies-container" class="movies-grid hidden">
+                <!-- Movie cards will be injected here via JS -->
+            </div>
+        </section>
+    </main>
+
+    <div id="movie-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button type="button" id="modal-backdrop" class="modal-backdrop" aria-label="Close movie details"></button>
+        <section class="modal-panel">
+            <button type="button" id="modal-close" class="modal-close" aria-label="Close movie details">&times;</button>
+            <img id="modal-poster" class="modal-poster" src="/static/img/poster-placeholder.svg" alt="">
+            <div class="modal-content">
+                <p id="modal-kicker" class="modal-kicker">Recommendation</p>
+                <h3 id="modal-title"></h3>
+                <div id="modal-meta" class="modal-meta"></div>
+                <div id="modal-rating"></div>
+                <p id="modal-explanation" class="modal-explanation"></p>
+                <div class="review-section">
+                    <label for="review-textarea" class="review-label">Your Review</label>
+                    <textarea id="review-textarea" class="review-textarea" placeholder="Write your thoughts about this film…" maxlength="2000" rows="4"></textarea>
+                    <div class="review-actions">
+                        <span id="review-char-count" class="review-char-count">0 / 2000</span>
+                        <button type="button" id="review-submit-btn" class="btn btn-primary review-submit-btn">Save Review</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand">NEXUS<span>.AI</span></span>
+                <p>Personalized intelligent movie curation powered by a hybrid ML engine.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="#">Top Picks</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Genres</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="mailto:hello@nexus.ai">hello@nexus.ai</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Nexus.AI &mdash; All rights reserved.</span>
+            <div class="footer-socials">
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="Instagram">&#9679;</a>
+                <a href="#" aria-label="GitHub">&#9632;</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
